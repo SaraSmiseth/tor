@@ -1,0 +1,5 @@
+SocksPort 0
+ORPort 9001
+#ORPort [IPv6-address]:9001
+Nickname torrelay4
+ExitPolicy reject *:*

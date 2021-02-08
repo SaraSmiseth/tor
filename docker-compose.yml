@@ -1,0 +1,25 @@
+version: "3.7"
+
+##############
+# Networking #
+##############
+
+networks:
+  tor:
+    external: false
+
+##############
+# Containers #
+##############
+
+services:
+  tor:
+    image: sarasmiseth/tor
+    restart: unless-stopped
+    ports:
+      - "9001:9001"
+    volumes:
+      - ./torrc:/etc/tor/torrc
+      - ./data:/var/lib/tor
+    networks:
+      - tor
